@@ -140,4 +140,5 @@ dmypy.json
 .vscode/
 password.txt
 anotacoes
+/btre/email_info.py
 # End of https://www.gitignore.io/api/django

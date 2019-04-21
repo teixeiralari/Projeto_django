@@ -34,12 +34,15 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
+    'contacts.apps.ContactsConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'django_cleanup'
 ]
 
@@ -136,3 +139,18 @@ STATICFILES_DIRS = [
 #Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+from .email_info import *
+
+#email config
+EMAIL_HOST = EMAIL_HOST
+EMAIL_PORT=EMAIL_PORT
+EMAIL_HOST_USER=EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD=EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = EMAIL_USE_TLS
