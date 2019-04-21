@@ -3,6 +3,7 @@ from django.contrib import messages
 from .models import Contact
 from django.core.mail import send_mail
 
+
 def contact(request):
     if request.method == 'POST': 
         listing_id = request.POST['listing_id']
@@ -32,7 +33,7 @@ def contact(request):
             'There has been an inquiry for ' + listing + '. Sign into the admin panel for more info', 
             'lahr.teixeira3@gmail.com',
             [realtor_email, 'rteixeira.larissa@gmail.com'],
-            fail_silently=False
+            fail_silently=False,
         )
 
         messages.success(request, 'your request has been submitted, a realtor wil get back soon')
